@@ -6,6 +6,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY app /usr/src/app
 COPY main.py /usr/src/
 
-WORKDIR /usr/src/
-
-ENTRYPOINT ["./main.py"]
+ENTRYPOINT ["/usr/src/main.py"]
