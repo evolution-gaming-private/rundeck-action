@@ -17,6 +17,10 @@ inputs:
   rundeck-job-options:
     description: 'Rundeck job options in json format'
     required: false
+  wait:
+    description: 'Wait Rundeck job finish and print output'
+    default: 'true'
+    required: false
 runs:
   using: 'docker'
   image: 'Dockerfile'
@@ -32,3 +36,5 @@ runs:
     - ${{ inputs.verify-ssl }}
     - --options
     - ${{ inputs.rundeck-job-options }}
+    - --wait
+    - ${{ inputs.wait }}
